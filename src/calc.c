@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char* argv[]){
+	char helpopt[3] = "-h";
+	//char helpoptln[7] = "--help";
 	double n1;
 	double n2;
 	char op;
@@ -13,6 +16,10 @@ int main(int argc, char* argv[]){
 		return 0;
 	}*/
 	if (argc < 4){
+		if (argc == 2 && strcmp(argv[1], helpopt) == 0){
+			printf("-h");
+			return 0;
+		}
 		printf("ERROR: NOT ENOUGH ARGS\nEXITED WITH CODE %d\n\r", 100+argc);
 		return 100+argc;
 	}
